@@ -1,0 +1,245 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+Register
+
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-6">
+
+        <div class="register-card">
+
+            <div class="text-center mb-4">
+
+                <div class="register-icon">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                </div>
+
+                <h2 class="register-title">
+
+                    Create Account
+
+                </h2>
+
+                <p class="register-text">
+
+                    Join MANTRALOOK WORLD and start generating AI powered question papers.
+
+                </p>
+
+            </div>
+
+            <form method="POST">
+
+                <div class="mb-4">
+
+                    <label class="form-label">
+
+                        Full Name
+
+                    </label>
+
+                    <input type="text" name="name" class="form-control custom-input" placeholder="Enter Full Name"
+                        required>
+
+                </div>
+
+                <div class="mb-4">
+
+                    <label class="form-label">
+
+                        Email Address
+
+                    </label>
+
+                    <input type="email" name="email" class="form-control custom-input" placeholder="Enter Email Address"
+                        required>
+
+                </div>
+
+                <div class="mb-4">
+
+                    <label class="form-label">
+
+                        Password
+
+                    </label>
+
+                    <input type="password" name="password" class="form-control custom-input"
+                        placeholder="Enter Password" required>
+
+                </div>
+                <div class="mb-4">
+
+                    <label class="form-label">
+
+                        Confirm Password
+
+                    </label>
+
+                    <input type="password" name="confirm_password" class="form-control custom-input"
+                        placeholder="Confirm Password" required>
+
+                </div>
+
+                <div class="d-grid">
+
+                    <button type="submit" class="btn btn-gold btn-lg">
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                        Create Account
+
+                    </button>
+
+                </div>
+
+            </form>
+
+            <hr class="my-4 text-secondary">
+
+            <div class="text-center">
+
+                <p class="login-text">
+
+                    Already have an account?
+
+                </p>
+
+                <a href="{{ url_for('auth.login') }}" class="btn btn-outline-light">
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+
+                    Login Now
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
+
+{% block extra_css %}
+
+<style>
+    .register-card {
+        background: #111;
+        border: 1px solid rgba(255, 215, 0, .20);
+        border-radius: 25px;
+        padding: 40px;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, .35);
+    }
+
+    .register-icon {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #FFD700, #b8860b);
+        color: #111;
+        font-size: 50px;
+        box-shadow: 0 15px 35px rgba(255, 215, 0, .30);
+    }
+
+    .register-title {
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: #fff;
+    }
+
+    .register-text {
+        color: #cfcfcf;
+        margin-top: 10px;
+        line-height: 1.8;
+    }
+
+    .form-label {
+        color: #FFD700;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .custom-input {
+        height: 54px;
+        background: #1b1b1b;
+        border: 1px solid #333;
+        border-radius: 12px;
+        color: #fff;
+    }
+
+    .custom-input:focus {
+        background: #1b1b1b;
+        color: #fff;
+        border-color: #FFD700;
+        box-shadow: 0 0 10px rgba(255, 215, 0, .25);
+    }
+
+    .custom-input::placeholder {
+        color: #999;
+    }
+
+    .btn-gold {
+        background: #FFD700;
+        color: #111;
+        font-weight: 700;
+        border: none;
+        padding: 14px;
+        border-radius: 50px;
+        transition: .3s;
+    }
+
+    .btn-gold:hover {
+        background: #ffc107;
+        color: #111;
+        transform: translateY(-2px);
+    }
+
+    .login-text {
+        color: #cfcfcf;
+        margin-bottom: 15px;
+    }
+
+    .btn-outline-light {
+        border-radius: 50px;
+        padding: 10px 25px;
+    }
+
+    hr {
+        border-color: #444;
+    }
+
+    @media(max-width:991px) {
+
+        .register-card {
+            padding: 25px;
+        }
+
+        .register-title {
+            font-size: 2rem;
+        }
+
+        .register-icon {
+            width: 90px;
+            height: 90px;
+            font-size: 38px;
+        }
+
+    }
+</style>
+
+{% endblock %}

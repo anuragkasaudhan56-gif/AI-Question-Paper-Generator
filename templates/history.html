@@ -1,0 +1,449 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+Question Paper History
+
+{% endblock %}
+
+{% block content %}
+
+<!-- ==========================================
+                PAGE HEADER
+=========================================== -->
+
+<div class="page-header mb-5">
+
+    <div class="row align-items-center">
+
+        <div class="col-lg-8">
+
+            <span class="page-badge">
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                AI Question Paper History
+
+            </span>
+
+            <h1 class="page-title mt-3">
+
+                Generated
+
+                <span>Question Papers</span>
+
+            </h1>
+
+            <p class="page-description">
+
+                View all your previously generated AI question papers.
+                Download them anytime or generate a new one.
+
+            </p>
+
+        </div>
+
+        <div class="col-lg-4 text-center">
+
+            <div class="history-icon">
+
+                <i class="fa-solid fa-folder-open"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+                HISTORY TABLE
+=========================================== -->
+
+<div class="history-card">
+
+    <div class="card-header-custom">
+
+        <h3>
+
+            <i class="fa-solid fa-folder-tree"></i>
+
+            Previous Question Papers
+
+        </h3>
+
+        <p>
+
+            All generated papers are listed below.
+
+        </p>
+
+    </div>
+
+    {% if papers %}
+
+    <div class="table-responsive">
+
+        <table class="table history-table align-middle">
+
+            <thead>
+
+                <tr>
+
+                    <th>#</th>
+
+                    <th>Subject</th>
+
+                    <th>Topic</th>
+
+                    <th>Paper ID</th>
+
+                    <th>Total Marks</th>
+
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {% for paper in papers %}
+
+                <tr>
+
+                    <td>
+
+                        {{ loop.index }}
+
+                    </td>
+
+                    <td>
+
+                        {{ paper.subject }}
+
+                    </td>
+
+                    <td>
+
+                        {{ paper.topic }}
+
+                    </td>
+
+                    <td>
+
+                        #{{ paper.id }}
+
+                    </td>
+
+                    <td>
+
+                        {{ paper.marks }}
+
+                    </td>
+
+                    <td>
+
+                        <a href="{{ url_for('download.download_pdf', paper_id=paper.id) }}" class="btn btn-sm btn-gold">
+
+                            <i class="fa-solid fa-download"></i>
+
+                            PDF
+
+                        </a>
+
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    {% else %}
+
+    <div class="text-center py-5">
+
+        <i class="fa-solid fa-folder-open display-1 text-warning mb-4"></i>
+
+        <h3 class="text-light">
+
+            No Question Papers Found
+
+        </h3>
+
+        <p class="text-secondary">
+
+            You haven't generated any question papers yet.
+
+        </p>
+
+        <a href="{{ url_for('generate.generate_page') }}" class="btn btn-gold mt-3">
+
+            <i class="fa-solid fa-plus"></i>
+
+            Generate First Paper
+
+        </a>
+
+    </div>
+
+    {% endif %}
+
+</div>
+<!-- ==========================================
+                INFORMATION SECTION
+=========================================== -->
+
+<div class="info-card mt-5">
+
+    <div class="row align-items-center">
+
+        <div class="col-lg-8">
+
+            <h2>
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                History Management
+
+            </h2>
+
+            <p>
+
+                All AI generated question papers are stored securely.
+                You can review previous papers, download them again,
+                or generate a brand new paper whenever required.
+
+            </p>
+
+            <ul class="info-list">
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Secure Question History
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    One Click PDF Download
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    AI Generated Papers
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Professional Format
+
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="col-lg-4 text-center">
+
+            <i class="fa-solid fa-folder-tree info-icon"></i>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block extra_css %}
+
+<style>
+    .page-badge {
+        display: inline-block;
+        padding: 8px 18px;
+        border-radius: 50px;
+        background: rgba(255, 215, 0, .15);
+        border: 1px solid rgba(255, 215, 0, .35);
+        color: #FFD700;
+        font-weight: 600;
+    }
+
+    .page-title {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #fff;
+    }
+
+    .page-title span {
+        color: #FFD700;
+    }
+
+    .page-description {
+        color: #cfcfcf;
+        font-size: 17px;
+        line-height: 1.8;
+        margin-top: 15px;
+    }
+
+    .history-icon {
+        width: 170px;
+        height: 170px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #FFD700, #b8860b);
+        color: #111;
+        font-size: 70px;
+        box-shadow: 0 20px 40px rgba(255, 215, 0, .30);
+    }
+
+    .history-card {
+        background: #111;
+        border: 1px solid rgba(255, 215, 0, .20);
+        border-radius: 25px;
+        padding: 40px;
+    }
+
+    .card-header-custom {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .card-header-custom h3 {
+        color: #FFD700;
+        font-weight: 700;
+    }
+
+    .card-header-custom p {
+        color: #bfbfbf;
+    }
+
+    .history-table {
+        margin: 0;
+        color: #fff;
+    }
+
+    .history-table thead th {
+        background: #FFD700;
+        color: #111;
+        border: none;
+        padding: 15px;
+        font-weight: 700;
+    }
+
+    .history-table tbody td {
+        background: #1b1b1b;
+        border-color: #333;
+        padding: 15px;
+        vertical-align: middle;
+        color: #fff;
+    }
+
+    .history-table tbody tr:hover td {
+        background: #242424;
+    }
+
+    .btn-gold {
+        background: #FFD700;
+        color: #111;
+        font-weight: 700;
+        border: none;
+    }
+
+    .btn-gold:hover {
+        background: #ffc107;
+        color: #111;
+    }
+
+    .info-card {
+        margin-top: 30px;
+        background: linear-gradient(135deg, #111, #1b1b1b);
+        border: 1px solid rgba(255, 215, 0, .20);
+        border-radius: 25px;
+        padding: 40px;
+    }
+
+    .info-card h2 {
+        color: #FFD700;
+        margin-bottom: 20px;
+    }
+
+    .info-card p {
+        color: #d0d0d0;
+        line-height: 1.8;
+    }
+
+    .info-list {
+        list-style: none;
+        padding: 0;
+        margin-top: 25px;
+    }
+
+    .info-list li {
+        color: #fff;
+        margin-bottom: 15px;
+    }
+
+    .info-list i {
+        color: #FFD700;
+        margin-right: 10px;
+    }
+
+    .info-icon {
+        font-size: 140px;
+        color: #FFD700;
+    }
+
+    @media(max-width:991px) {
+
+        .page-title {
+            font-size: 2.3rem;
+            text-align: center;
+        }
+
+        .page-description {
+            text-align: center;
+        }
+
+        .page-badge {
+            display: table;
+            margin: auto;
+        }
+
+        .history-icon {
+            margin-top: 35px;
+        }
+
+        .history-card,
+        .info-card {
+            padding: 25px;
+        }
+
+        .info-icon {
+            font-size: 90px;
+            margin-top: 25px;
+        }
+
+    }
+</style>
+
+{% endblock %}

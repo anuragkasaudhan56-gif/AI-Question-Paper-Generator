@@ -1,0 +1,361 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+Generated Question Paper
+
+{% endblock %}
+
+{% block content %}
+
+<!-- ==========================================
+                PAGE HEADER
+=========================================== -->
+
+<div class="page-header mb-5">
+
+    <div class="row align-items-center">
+
+        <div class="col-lg-8">
+
+            <span class="page-badge">
+
+                <i class="fa-solid fa-file-circle-check"></i>
+
+                AI Generation Complete
+
+            </span>
+
+            <h1 class="page-title mt-3">
+
+                Generated
+
+                <span>Question Paper</span>
+
+            </h1>
+
+            <p class="page-description">
+
+                Your AI-generated question paper is ready.
+                You can preview it below or download it
+                as a professional PDF.
+
+            </p>
+
+        </div>
+
+        <div class="col-lg-4 text-center">
+
+            <div class="result-icon">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+                RESULT CARD
+=========================================== -->
+
+<div class="result-card">
+
+    <div class="card-header-custom">
+
+        <h3>
+
+            <i class="fa-solid fa-file-lines"></i>
+
+            Generated Question Paper
+
+        </h3>
+
+        <p>
+
+            Preview your AI generated examination paper.
+
+        </p>
+
+    </div>
+
+    <div class="paper-preview">
+
+        <pre>{{ paper }}</pre>
+
+    </div>
+
+    <div class="text-center mt-4">
+
+        <a href="{{ url_for('download.download_pdf', paper_id=paper_id) }}" class="btn btn-gold btn-lg me-3">
+
+            <i class="fa-solid fa-download"></i>
+
+            Download PDF
+
+        </a>
+
+        <a href="{{ url_for('generate.generate_page') }}" class="btn btn-outline-light btn-lg">
+
+            <i class="fa-solid fa-plus"></i>
+
+            Generate Again
+
+        </a>
+
+    </div>
+
+</div>
+<!-- ==========================================
+                INFORMATION SECTION
+=========================================== -->
+
+<div class="info-card mt-5">
+
+    <div class="row align-items-center">
+
+        <div class="col-lg-8">
+
+            <h2>
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                AI Generated Successfully
+
+            </h2>
+
+            <p>
+
+                Your examination paper has been generated successfully.
+                You can review it, download it as a PDF, or generate a
+                new paper with different details whenever required.
+
+            </p>
+
+            <ul class="info-list">
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Professional Question Format
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    AI Powered Generation
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Instant PDF Download
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Premium Layout
+
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="col-lg-4 text-center">
+
+            <i class="fa-solid fa-circle-check info-icon"></i>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block extra_css %}
+
+<style>
+    .page-badge {
+        display: inline-block;
+        padding: 8px 18px;
+        border-radius: 50px;
+        background: rgba(255, 215, 0, .15);
+        border: 1px solid rgba(255, 215, 0, .35);
+        color: #FFD700;
+        font-weight: 600;
+    }
+
+    .page-title {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #fff;
+    }
+
+    .page-title span {
+        color: #FFD700;
+    }
+
+    .page-description {
+        color: #cfcfcf;
+        font-size: 17px;
+        line-height: 1.8;
+        margin-top: 15px;
+    }
+
+    .result-icon {
+        width: 170px;
+        height: 170px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #FFD700, #b8860b);
+        color: #111;
+        font-size: 70px;
+        box-shadow: 0 20px 40px rgba(255, 215, 0, .30);
+    }
+
+    .result-card {
+        background: #111;
+        border: 1px solid rgba(255, 215, 0, .20);
+        border-radius: 25px;
+        padding: 40px;
+    }
+
+    .card-header-custom {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .card-header-custom h3 {
+        color: #FFD700;
+        font-weight: 700;
+    }
+
+    .card-header-custom p {
+        color: #bfbfbf;
+    }
+
+    .paper-preview {
+        background: #1a1a1a;
+        border: 1px solid #333;
+        border-radius: 15px;
+        padding: 25px;
+        max-height: 650px;
+        overflow: auto;
+    }
+
+    .paper-preview pre {
+        margin: 0;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        color: #fff;
+        font-size: 15px;
+        font-family: Consolas, monospace;
+        line-height: 1.8;
+    }
+
+    .btn-gold {
+        background: #FFD700;
+        color: #111;
+        border: none;
+        font-weight: 700;
+        padding: 12px 28px;
+        border-radius: 50px;
+    }
+
+    .btn-gold:hover {
+        background: #ffc107;
+        color: #111;
+    }
+
+    .info-card {
+        background: linear-gradient(135deg, #111, #1b1b1b);
+        border: 1px solid rgba(255, 215, 0, .20);
+        border-radius: 25px;
+        padding: 40px;
+    }
+
+    .info-card h2 {
+        color: #FFD700;
+        margin-bottom: 20px;
+    }
+
+    .info-card p {
+        color: #d5d5d5;
+        line-height: 1.8;
+    }
+
+    .info-list {
+        list-style: none;
+        padding: 0;
+        margin-top: 25px;
+    }
+
+    .info-list li {
+        margin-bottom: 15px;
+        color: #fff;
+    }
+
+    .info-list i {
+        color: #FFD700;
+        margin-right: 10px;
+    }
+
+    .info-icon {
+        font-size: 140px;
+        color: #FFD700;
+    }
+
+    @media(max-width:991px) {
+
+        .page-title {
+            font-size: 2.3rem;
+            text-align: center;
+        }
+
+        .page-description {
+            text-align: center;
+        }
+
+        .page-badge {
+            display: table;
+            margin: auto;
+        }
+
+        .result-icon {
+            margin-top: 35px;
+        }
+
+        .result-card,
+        .info-card {
+            padding: 25px;
+        }
+
+        .paper-preview {
+            padding: 18px;
+        }
+
+        .info-icon {
+            font-size: 90px;
+            margin-top: 25px;
+        }
+
+    }
+</style>
+
+{% endblock %}

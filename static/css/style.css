@@ -1,0 +1,1154 @@
+/*==========================================================
+        AI QUESTION PAPER GENERATOR
+        Premium Login UI
+        MANTRALOOK WORLD
+==========================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*========================
+        RESET
+========================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    background: #070707;
+
+    color: #fff;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+}
+
+/*========================
+    ANIMATED BACKGROUND
+========================*/
+
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -2;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at top left, #202020, #090909, #000);
+
+}
+
+/*========================
+        GOLD GLOW
+========================*/
+
+.glow {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(90px);
+
+    opacity: .35;
+
+}
+
+.glow1 {
+
+    width: 350px;
+
+    height: 350px;
+
+    background: #FFD54F;
+
+    left: -120px;
+
+    top: -120px;
+
+}
+
+.glow2 {
+
+    width: 300px;
+
+    height: 300px;
+
+    background: #D4AF37;
+
+    right: -100px;
+
+    bottom: -100px;
+
+}
+
+.glow3 {
+
+    width: 240px;
+
+    height: 240px;
+
+    background: #ffb300;
+
+    left: 45%;
+
+    top: 30%;
+
+}
+
+/*========================
+    LOGIN SECTION
+========================*/
+
+.login-section {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px;
+
+}
+
+.main-wrapper {
+
+    width: 100%;
+
+    max-width: 1750px;
+
+    min-height: 920px;
+
+    background: rgba(20, 20, 20, .75);
+
+    border-radius: 35px;
+
+    overflow: hidden;
+
+    backdrop-filter: blur(25px);
+
+    border: 1px solid rgba(212, 175, 55, .20);
+
+    box-shadow:
+
+        0 25px 80px rgba(0, 0, 0, .50);
+
+}
+
+/*==========================================================
+                    LEFT PANEL
+==========================================================*/
+
+.left-panel {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 80px;
+
+}
+
+.left-content {
+
+    width: 100%;
+
+    max-width: 560px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+}
+
+/*==========================================================
+                    LOGO
+==========================================================*/
+
+.brand {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+.logo {
+
+    width: 260px;
+
+    height: auto;
+
+    object-fit: contain;
+
+    filter: drop-shadow(0 0 20px rgba(212, 175, 55, .45));
+
+    transition: .4s;
+
+}
+
+.logo:hover {
+
+    transform: scale(1.08);
+
+}
+
+.brand-title {
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+    color: #D4AF37;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 35px;
+
+}
+
+/*==========================================================
+                    MAIN HEADING
+==========================================================*/
+
+.main-heading {
+
+    font-size: 58px;
+
+    font-weight: 800;
+
+    line-height: 1.15;
+
+    margin-bottom: 22px;
+
+    color: #ffffff;
+
+}
+
+.main-heading span {
+
+    display: block;
+
+    color: #D4AF37;
+
+}
+
+/*==========================================================
+                    DESCRIPTION
+==========================================================*/
+
+.left-description {
+
+    max-width: 520px;
+
+    font-size: 18px;
+
+    line-height: 32px;
+
+    color: #d0d0d0;
+
+    margin-bottom: 40px;
+
+}
+
+/*==========================================================
+                    ROBOT
+==========================================================*/
+
+.robot-wrapper {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+.robot {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    animation: robotFloat 4s ease-in-out infinite;
+
+    filter: drop-shadow(0 0 35px rgba(212, 175, 55, .35));
+
+}
+
+@keyframes robotFloat {
+
+    0% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-15px);
+
+    }
+
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+}
+
+/*==========================================================
+                    RIGHT PANEL
+==========================================================*/
+
+.right-panel {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 80px;
+
+}
+
+/*==========================================================
+                    LOGIN CARD
+==========================================================*/
+
+.login-card {
+
+    width: 100%;
+
+    max-width: 480px;
+
+    background: rgba(18, 18, 18, .88);
+
+    backdrop-filter: blur(30px);
+
+    border: 1px solid rgba(212, 175, 55, .25);
+
+    border-radius: 30px;
+
+    padding: 45px;
+
+    box-shadow:
+        0 0 40px rgba(212, 175, 55, .10),
+        0 20px 60px rgba(0, 0, 0, .45);
+
+    transition: .35s;
+
+}
+
+.login-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 0 60px rgba(212, 175, 55, .18),
+        0 25px 70px rgba(0, 0, 0, .55);
+
+}
+
+/*==========================================================
+                    LOGIN HEADER
+==========================================================*/
+
+.login-header {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+
+}
+
+.login-header h2 {
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+    margin-bottom: 10px;
+
+}
+
+.login-header p {
+
+    color: #cfcfcf;
+
+    font-size: 15px;
+
+    line-height: 28px;
+
+}
+
+/*==========================================================
+                    FLASH ALERT
+==========================================================*/
+
+.alert {
+
+    border-radius: 15px;
+
+    border: none;
+
+    margin-bottom: 25px;
+
+}
+
+/*==========================================================
+                    LABELS
+==========================================================*/
+
+.input-group-custom {
+
+    margin-bottom: 22px;
+
+}
+
+.input-group-custom label {
+
+    display: block;
+
+    color: #D4AF37;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+
+}
+
+/*==========================================================
+                    INPUT BOX
+==========================================================*/
+
+.input-box {
+
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    height: 60px;
+
+    background: #111111;
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    border-radius: 16px;
+
+    transition: .3s;
+
+}
+
+.input-box:hover {
+
+    border-color: #D4AF37;
+
+}
+
+.input-box:focus-within {
+
+    border-color: #D4AF37;
+
+    box-shadow: 0 0 18px rgba(212, 175, 55, .18);
+
+}
+
+.input-box i {
+
+    width: 60px;
+
+    text-align: center;
+
+    color: #D4AF37;
+
+    font-size: 18px;
+
+}
+
+.input-box input {
+
+    flex: 1;
+
+    height: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    padding-right: 15px;
+
+}
+
+.input-box input::placeholder {
+
+    color: #8c8c8c;
+
+}
+
+/*==========================================================
+                PASSWORD TOGGLE
+==========================================================*/
+
+.password-box span {
+
+    width: 55px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    cursor: pointer;
+
+    color: #D4AF37;
+
+    transition: .3s;
+
+}
+
+.password-box span:hover {
+
+    color: #ffffff;
+
+}
+
+/*==========================================================
+                REMEMBER & FORGOT
+==========================================================*/
+
+.remember-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin: 10px 0 30px;
+
+}
+
+.remember {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #d8d8d8;
+
+    font-size: 15px;
+
+}
+
+.remember input {
+
+    width: 18px;
+
+    height: 18px;
+
+    accent-color: #D4AF37;
+
+    cursor: pointer;
+
+}
+
+.remember-row a {
+
+    color: #D4AF37;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    transition: .3s;
+
+}
+
+.remember-row a:hover {
+
+    color: #FFD54F;
+
+}
+
+/*==========================================================
+                    LOGIN BUTTON
+==========================================================*/
+
+.login-btn {
+
+    width: 100%;
+
+    height: 60px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    background: linear-gradient(135deg, #D4AF37, #FFD54F);
+
+    color: #111;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .35s;
+
+    box-shadow: 0 10px 25px rgba(212, 175, 55, .25);
+
+}
+
+.login-btn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 18px 35px rgba(212, 175, 55, .40);
+
+}
+
+.login-btn i {
+
+    margin-right: 10px;
+
+}
+
+/*==========================================================
+                    DIVIDER
+==========================================================*/
+
+.divider {
+
+    position: relative;
+
+    text-align: center;
+
+    margin: 30px 0;
+
+}
+
+.divider::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 50%;
+
+    width: 100%;
+
+    height: 1px;
+
+    background: rgba(255, 255, 255, .12);
+
+}
+
+.divider span {
+
+    position: relative;
+
+    background: #121212;
+
+    padding: 0 18px;
+
+    color: #999;
+
+    font-size: 14px;
+
+}
+
+/*==========================================================
+                GOOGLE BUTTON
+==========================================================*/
+
+.google-btn {
+
+    width: 100%;
+
+    height: 58px;
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(255, 255, 255, .12);
+
+    background: transparent;
+
+    color: #fff;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: .35s;
+
+}
+
+.google-btn:hover {
+
+    border-color: #D4AF37;
+
+    background: rgba(212, 175, 55, .08);
+
+}
+
+.google-btn i {
+
+    color: #EA4335;
+
+    margin-right: 10px;
+
+}
+
+/*==========================================================
+                    REGISTER
+==========================================================*/
+
+.register {
+
+    margin-top: 30px;
+
+    text-align: center;
+
+}
+
+.register p {
+
+    color: #cfcfcf;
+
+}
+
+.register a {
+
+    color: #D4AF37;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+}
+
+.register a:hover {
+
+    color: #FFD54F;
+
+}
+
+/*==========================================================
+                    COPYRIGHT
+==========================================================*/
+
+.copyright {
+
+    margin-top: 30px;
+
+    text-align: center;
+
+}
+
+.copyright p {
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 24px;
+
+}
+
+/*==========================================================
+                RESPONSIVE DESIGN
+==========================================================*/
+
+@media (max-width:1200px) {
+
+    .main-heading {
+
+        font-size: 48px;
+
+    }
+
+    .robot {
+
+        max-width: 380px;
+
+    }
+
+}
+
+@media (max-width:992px) {
+
+    .main-wrapper {
+
+        flex-direction: column;
+
+    }
+
+    .left-panel,
+    .right-panel {
+
+        padding: 40px 25px;
+
+    }
+
+    .left-content {
+
+        text-align: center;
+
+    }
+
+    .main-heading {
+
+        font-size: 42px;
+
+    }
+
+    .robot {
+
+        max-width: 320px;
+
+        margin-top: 20px;
+
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .login-section {
+
+        padding: 15px;
+
+    }
+
+    .main-wrapper {
+
+        border-radius: 20px;
+
+    }
+
+    .logo {
+
+        width: 130px;
+
+    }
+
+    .brand-title {
+
+        font-size: 28px;
+
+    }
+
+    .main-heading {
+
+        font-size: 34px;
+
+    }
+
+    .left-description {
+
+        font-size: 16px;
+
+        line-height: 28px;
+
+    }
+
+    .login-card {
+
+        padding: 30px 22px;
+
+    }
+
+}
+
+@media (max-width:480px) {
+
+    .logo {
+
+        width: 100px;
+
+    }
+
+    .brand-title {
+
+        font-size: 24px;
+
+    }
+
+    .main-heading {
+
+        font-size: 28px;
+
+    }
+
+    .left-description {
+
+        font-size: 15px;
+
+    }
+
+    .remember-row {
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        align-items: flex-start;
+
+    }
+
+}
+
+/*==========================================================
+                CURSOR GLOW
+==========================================================*/
+
+.cursor-glow {
+
+    position: fixed;
+
+    width: 22px;
+
+    height: 22px;
+
+    border-radius: 50%;
+
+    background: #D4AF37;
+
+    filter: blur(10px);
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+
+    opacity: .45;
+
+    z-index: 9999;
+
+}
+
+/*==========================================================
+                SMOOTH EFFECTS
+==========================================================*/
+
+.logo,
+.robot,
+.login-card,
+.login-btn,
+.google-btn,
+.input-box {
+
+    transition: all .35s ease;
+
+}
+
+/*==========================================================
+                TEXT SELECTION
+==========================================================*/
+
+::selection {
+
+    background: #D4AF37;
+
+    color: #111;
+
+}
+
+/*==========================================================
+                REMOVE OUTLINES
+==========================================================*/
+
+button:focus,
+input:focus {
+
+    outline: none;
+
+}
+
+/*==========================================================
+                LOGIN CARD ANIMATION
+==========================================================*/
+
+.login-card {
+
+    animation: fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(40px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+/*==========================
+        NAVBAR LOGO
+==========================*/
+
+.custom-navbar {
+
+    background: #111;
+
+    border-bottom: 1px solid rgba(212, 175, 55, .2);
+
+    padding: 15px 0;
+
+}
+
+.navbar-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    text-decoration: none;
+
+}
+
+.nav-logo {
+
+    width: 460px;
+
+    height: auto;
+
+    object-fit: contain;
+
+}
+
+.brand-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    text-align: left;
+
+}
+
+.brand-title-nav {
+
+    color: #D4AF37;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    margin: 0;
+
+}
+
+.brand-text small {
+
+    color: #bbb;
+
+    font-size: 13px;
+
+    margin-top: 2px;
+
+}
+
+/*==========================================================
+                END OF FILE
+==========================================================*/
+
+/* ======================================================
+   APP BACK / PREVIOUS BUTTON
+======================================================= */
+.app-back-row {
+    display: flex;
+    align-items: center;
+}
+
+.app-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 16px;
+    border: 1px solid rgba(255, 215, 0, .35);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .045);
+    color: #fff;
+    text-decoration: none;
+    font-size: .92rem;
+    font-weight: 500;
+    transition: all .2s ease;
+}
+
+.app-back-btn i {
+    font-size: .85rem;
+}
+
+.app-back-btn:hover {
+    color: #FFD700;
+    border-color: rgba(255, 215, 0, .7);
+    background: rgba(255, 215, 0, .08);
+    transform: translateX(-2px);
+}

@@ -1,0 +1,532 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+Generate Question Paper
+
+{% endblock %}
+
+{% block content %}
+
+<!-- ==========================================
+                PAGE HEADER
+=========================================== -->
+
+<div class="page-header mb-5">
+
+    <div class="row align-items-center">
+
+        <div class="col-lg-8">
+
+            <span class="page-badge">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                AI Question Paper Generator
+
+            </span>
+
+            <h1 class="page-title mt-3">
+
+                Generate
+
+                <span>Question Paper</span>
+
+            </h1>
+
+            <p class="page-description">
+
+                Enter your examination details below and let Artificial
+                Intelligence generate a professional question paper
+                within seconds.
+
+            </p>
+
+        </div>
+
+        <div class="col-lg-4 text-center">
+
+            <div class="generate-icon">
+
+                <i class="fa-solid fa-file-circle-plus"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+                GENERATE FORM
+=========================================== -->
+
+<div class="generate-card">
+
+    <div class="card-header-custom">
+
+        <h3>
+
+            <i class="fa-solid fa-clipboard-list"></i>
+
+            Examination Details
+
+        </h3>
+
+        <p>
+
+            Fill in all required information carefully.
+
+        </p>
+
+    </div>
+
+    <form method="POST">
+
+        <div class="row">
+
+            <!-- College Name -->
+
+            <div class="col-md-6 mb-4">
+
+                <label class="form-label">
+
+                    College Name
+
+                </label>
+
+                <input type="text" name="college" class="form-control custom-input" placeholder="Enter College Name"
+                    required>
+
+            </div>
+
+            <!-- University -->
+
+            <div class="col-md-6 mb-4">
+
+                <label class="form-label">
+
+                    University
+
+                </label>
+
+                <input type="text" name="university" class="form-control custom-input"
+                    placeholder="Enter University Name" required>
+
+            </div>
+
+            <!-- Examination -->
+
+            <div class="col-md-6 mb-4">
+
+                <label class="form-label">
+
+                    Examination
+
+                </label>
+
+                <input type="text" name="exam" class="form-control custom-input"
+                    placeholder="Semester / Annual / Mid-Term" required>
+
+            </div>
+
+            <!-- Subject -->
+
+            <div class="col-md-6 mb-4">
+
+                <label class="form-label">
+
+                    Subject
+
+                </label>
+
+                <input type="text" name="subject" class="form-control custom-input" placeholder="Subject Name" required>
+
+            </div>
+            <!-- Topic -->
+
+            <div class="col-md-6 mb-4">
+
+                <label class="form-label">
+
+                    Topic
+
+                </label>
+
+                <input type="text" name="topic" class="form-control custom-input" placeholder="Important Topic"
+                    required>
+
+            </div>
+
+            <!-- Difficulty -->
+
+            <div class="col-md-6 mb-4">
+
+                <label class="form-label">
+
+                    Difficulty Level
+
+                </label>
+
+                <select name="difficulty" class="form-select custom-input">
+
+                    <option value="Easy">
+
+                        Easy
+
+                    </option>
+
+                    <option value="Medium">
+
+                        Medium
+
+                    </option>
+
+                    <option value="Hard">
+
+                        Hard
+
+                    </option>
+
+                </select>
+
+            </div>
+
+            <!-- Total Marks -->
+
+            <div class="col-md-6 mb-4">
+
+                <label class="form-label">
+
+                    Total Marks
+
+                </label>
+
+                <input type="number" name="marks" class="form-control custom-input" placeholder="100" required>
+
+            </div>
+
+            <!-- Total Questions -->
+
+            <div class="col-md-6 mb-4">
+
+                <label class="form-label">
+
+                    Total Questions
+
+                </label>
+
+                <input type="number" name="questions" class="form-control custom-input" placeholder="10" required>
+
+            </div>
+
+            <!-- Exam Date -->
+
+            <div class="col-md-6 mb-4">
+
+                <label class="form-label">
+
+                    Examination Date
+
+                </label>
+
+                <input type="date" name="date" class="form-control custom-input" required>
+
+            </div>
+
+            <!-- Duration -->
+
+            <div class="col-md-6 mb-4">
+
+                <label class="form-label">
+
+                    Duration
+
+                </label>
+
+                <input type="text" name="time" class="form-control custom-input" placeholder="3 Hours" required>
+
+            </div>
+
+        </div>
+
+        <!-- Generate Button -->
+
+        <div class="text-center mt-4">
+
+            <button type="submit" class="btn btn-gold btn-lg px-5">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                Generate Question Paper
+
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+<!-- ==========================================
+                INFORMATION SECTION
+=========================================== -->
+
+<div class="info-card mt-5">
+
+    <div class="row align-items-center">
+
+        <div class="col-lg-8">
+
+            <h2>
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                AI Powered Generation
+
+            </h2>
+
+            <p>
+
+                Our Artificial Intelligence creates professional
+                examination papers based on the details you provide.
+                The generated paper follows a structured format
+                suitable for schools, colleges and universities.
+
+            </p>
+
+            <ul class="info-list">
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Professional Question Format
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Multiple Difficulty Levels
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    AI Generated Content
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    PDF Download Ready
+
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="col-lg-4 text-center">
+
+            <i class="fa-solid fa-robot info-icon"></i>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
+
+{% block extra_css %}
+
+<style>
+    .page-badge {
+        display: inline-block;
+        padding: 8px 18px;
+        border-radius: 50px;
+        background: rgba(255, 215, 0, .15);
+        border: 1px solid rgba(255, 215, 0, .35);
+        color: #FFD700;
+        font-weight: 600;
+    }
+
+    .page-title {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #fff;
+    }
+
+    .page-title span {
+        color: #FFD700;
+    }
+
+    .page-description {
+        color: #cfcfcf;
+        font-size: 17px;
+        line-height: 1.8;
+        margin-top: 15px;
+    }
+
+    .generate-icon {
+        width: 170px;
+        height: 170px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #FFD700, #b8860b);
+        color: #111;
+        font-size: 70px;
+        box-shadow: 0 20px 40px rgba(255, 215, 0, .30);
+    }
+
+    .generate-card {
+        background: #111;
+        border: 1px solid rgba(255, 215, 0, .20);
+        border-radius: 25px;
+        padding: 40px;
+        backdrop-filter: blur(12px);
+    }
+
+    .card-header-custom {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .card-header-custom h3 {
+        color: #FFD700;
+        font-weight: 700;
+    }
+
+    .card-header-custom p {
+        color: #bfbfbf;
+    }
+
+    .form-label {
+        color: #FFD700;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .custom-input {
+        height: 52px;
+        background: #1b1b1b;
+        border: 1px solid #333;
+        border-radius: 12px;
+        color: #fff;
+    }
+
+    .custom-input:focus {
+        background: #1b1b1b;
+        color: #fff;
+        border-color: #FFD700;
+        box-shadow: 0 0 10px rgba(255, 215, 0, .25);
+    }
+
+    .custom-input::placeholder {
+        color: #999;
+    }
+
+    .custom-input option {
+        background: #1b1b1b;
+        color: #fff;
+    }
+
+    .btn-gold {
+        background: #FFD700;
+        color: #111;
+        border: none;
+        font-weight: 700;
+        padding: 14px 35px;
+        border-radius: 50px;
+        transition: .3s;
+    }
+
+    .btn-gold:hover {
+        background: #ffc107;
+        color: #111;
+        transform: translateY(-3px);
+    }
+
+    .info-card {
+        margin-top: 30px;
+        background: linear-gradient(135deg, #111, #1c1c1c);
+        border: 1px solid rgba(255, 215, 0, .20);
+        border-radius: 25px;
+        padding: 40px;
+    }
+
+    .info-card h2 {
+        color: #FFD700;
+        margin-bottom: 20px;
+    }
+
+    .info-card p {
+        color: #d0d0d0;
+        line-height: 1.8;
+    }
+
+    .info-list {
+        list-style: none;
+        padding: 0;
+        margin-top: 25px;
+    }
+
+    .info-list li {
+        color: #fff;
+        margin-bottom: 15px;
+    }
+
+    .info-list i {
+        color: #FFD700;
+        margin-right: 10px;
+    }
+
+    .info-icon {
+        font-size: 140px;
+        color: #FFD700;
+    }
+
+    @media(max-width:991px) {
+
+        .page-title {
+            font-size: 2.3rem;
+            text-align: center;
+        }
+
+        .page-description {
+            text-align: center;
+        }
+
+        .page-badge {
+            display: table;
+            margin: auto;
+        }
+
+        .generate-icon {
+            margin-top: 35px;
+        }
+
+        .generate-card,
+        .info-card {
+            padding: 25px;
+        }
+
+        .info-icon {
+            font-size: 90px;
+            margin-top: 25px;
+        }
+
+    }
+</style>
+
+{% endblock %}
